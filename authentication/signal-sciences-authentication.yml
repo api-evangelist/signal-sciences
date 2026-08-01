@@ -1,0 +1,29 @@
+generated: '2026-07-21'
+method: searched
+source: https://www.fastly.com/documentation/reference/api/ngwaf/
+docs: https://www.fastly.com/documentation/signalsciences/using-our-api/
+verified_probe: 'GET https://dashboard.signalsciences.net/api/v0/corps returns HTTP 401 {"message":"Unauthorized: You must be logged in to call this API"}'
+base_url: https://dashboard.signalsciences.net/api/v0
+summary:
+  types:
+  - token
+  token_transport: header
+schemes:
+- name: sessionToken
+  type: token
+  description: >-
+    A session token obtained by POSTing email + password credentials to
+    /auth, which returns a token used to authenticate subsequent requests.
+    Verified live: unauthenticated requests to /api/v0/* return HTTP 401 with a
+    JSON {"message": ...} body.
+  obtain: POST https://dashboard.signalsciences.net/api/v0/auth
+  sources:
+  - https://www.fastly.com/documentation/reference/api/ngwaf/
+- name: apiAccessToken
+  type: token
+  description: >-
+    Personal API access tokens created from the user's account settings in the
+    Next-Gen WAF console (dashboard.signalsciences.net), used to authenticate
+    programmatic API requests without an interactive login.
+  sources:
+  - https://www.fastly.com/documentation/signalsciences/using-our-api/

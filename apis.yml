@@ -1,8 +1,19 @@
 aid: signal-sciences
 name: Signal Sciences
-description: 'Signal Sciences is a company surfaced as a portfolio company of crv, index-ventures and
-  added to the API Evangelist network as a stub for enrichment. Sector: security. This profile is a lead
-  awaiting the enrichment pipeline.'
+description: >-
+  Signal Sciences is a web application and API protection (WAAP) company whose
+  Next-Gen Web Application Firewall (WAF) and Runtime Application Self-Protection
+  (RASP) defend web apps, APIs, and microservices against the OWASP Top 10,
+  account takeover, and malicious bots without the tuning burden of legacy WAFs.
+  Founded in 2014 by Andrew Peterson, Nick Galbreath, and Zane Lackey and backed
+  by CRV, Index Ventures, and others, Signal Sciences was acquired by Fastly in
+  October 2020 for approximately $775M and is now sold as the Fastly Next-Gen
+  WAF. The product retains its own control plane and REST API at
+  dashboard.signalsciences.net/api/v0, which remains live for existing customers
+  and lets developers programmatically manage corps, sites, requests, events,
+  custom signals, rules, redactions, lists, rate-limited sources, thresholds,
+  virtual patches, and workspace alerts. Product documentation now lives on the
+  Fastly developer documentation site.
 url: https://raw.githubusercontent.com/api-evangelist/signal-sciences/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,18 +22,97 @@ x-backed-by:
 - index-ventures
 x-tier: stub
 x-tier-reason: portfolio-lead
+x-status: acquired
+x-acquired-by: fastly
+x-acquired-date: '2020-10'
+x-successor-product: Fastly Next-Gen WAF (all/fastly, aid fastly:ngwaf-api)
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
 - Security
-apis: []
+- Web Application Firewall
+- WAF
+- API Security
+- RASP
+- Application Security
+- Bot Protection
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/signal-sciences.png
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- aid: signal-sciences:core-api
+  name: Signal Sciences Core API
+  description: >-
+    The Signal Sciences Core API (now the Fastly Next-Gen WAF control-plane API)
+    is a REST API served at https://dashboard.signalsciences.net/api/v0 that lets
+    developers manage the Next-Gen WAF programmatically. Resources are organized
+    under a corp then site hierarchy and include Agent Keys, Agents, Custom
+    Dashboards, Custom Signals, Events, Header Links, Lists, Rate Limited Sources,
+    Redactions, Reports, Requests, Rules, Simulate, Thresholds, Time Series,
+    Virtual Patches, Workspace Alerts, and Workspaces. Authentication is
+    token-based (a session token obtained from POST /auth, or a personal API
+    access token). Responses are JSON; errors use a {"message": ...} envelope.
+  baseURL: https://dashboard.signalsciences.net
+  humanURL: https://www.fastly.com/documentation/reference/api/ngwaf/
+  tags:
+  - Security
+  - WAF
+  - Web Application Firewall
+  - API Security
+  - Next-Gen WAF
+  properties:
+  - url: https://www.fastly.com/documentation/reference/api/ngwaf/
+    type: Documentation
+  - url: https://www.fastly.com/documentation/reference/api/ngwaf/
+    type: APIReference
+  - url: authentication/signal-sciences-authentication.yml
+    type: Authentication
+  - url: conventions/signal-sciences-conventions.yml
+    type: Conventions
+  - url: errors/signal-sciences-problem-types.yml
+    type: ErrorCatalog
 common:
 - type: Website
   url: https://www.signalsciences.com/
+- type: DeveloperPortal
+  url: https://www.fastly.com/documentation/signalsciences/
+- type: Documentation
+  url: https://www.fastly.com/documentation/signalsciences/
+- type: APIReference
+  url: https://www.fastly.com/documentation/reference/api/ngwaf/
+- type: Authentication
+  url: authentication/signal-sciences-authentication.yml
+- type: Conventions
+  url: conventions/signal-sciences-conventions.yml
+- type: ErrorCatalog
+  url: errors/signal-sciences-problem-types.yml
+- type: DomainSecurity
+  url: security/signal-sciences-domain-security.yml
+- type: WellKnown
+  url: well-known/signal-sciences-well-known.yml
+- type: LLMsTxt
+  url: llms/signal-sciences-llms.txt
+- type: GitHubOrganization
+  url: https://github.com/signalsciences
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 6
+  pass: local-v1

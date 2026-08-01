@@ -1,0 +1,20 @@
+generated: '2026-07-21'
+method: derived
+format: json-message-envelope
+source: >-
+  Derived from live probes of https://dashboard.signalsciences.net/api/v0. The
+  API does not use RFC 9457 application/problem+json; errors return a plain JSON
+  object with a single "message" field.
+envelope:
+  field: message
+  media_type: application/json; charset=utf-8
+  example: '{"message": "Unauthorized: You must be logged in to call this API"}'
+problems:
+- status: 401
+  title: Unauthorized
+  message: 'Unauthorized: You must be logged in to call this API'
+  remediation: >-
+    Authenticate with a session token (POST /auth) or a personal API access
+    token before calling the API.
+  verified: true
+  source_probe: GET https://dashboard.signalsciences.net/api/v0/corps

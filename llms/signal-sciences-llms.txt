@@ -1,0 +1,23 @@
+# Signal Sciences
+
+> Signal Sciences is a web application and API protection (WAAP) company whose Next-Gen Web Application Firewall (WAF) and Runtime Application Self-Protection (RASP) defend web apps, APIs, and microservices against the OWASP Top 10, account takeover, and malicious bots. Founded in 2014 and acquired by Fastly in October 2020 (~$775M), it is now sold as the Fastly Next-Gen WAF. The product keeps its own control plane and REST API at dashboard.signalsciences.net/api/v0.
+
+## APIs
+
+- [Signal Sciences Core API](https://www.fastly.com/documentation/reference/api/ngwaf/): REST API at https://dashboard.signalsciences.net/api/v0 to manage corps, sites, requests, events, custom signals, rules, redactions, lists, rate-limited sources, thresholds, virtual patches, and workspace alerts. Token authentication (POST /auth or personal API access token); JSON responses.
+
+## Docs
+
+- [Signal Sciences / Next-Gen WAF documentation](https://www.fastly.com/documentation/signalsciences/): product and developer documentation, now hosted by Fastly.
+- [Next-Gen WAF API reference](https://www.fastly.com/documentation/reference/api/ngwaf/): endpoint reference for the control-plane API.
+
+## Artifacts
+
+- [Authentication](https://raw.githubusercontent.com/api-evangelist/signal-sciences/refs/heads/main/authentication/signal-sciences-authentication.yml): token-based auth profile.
+- [Conventions](https://raw.githubusercontent.com/api-evangelist/signal-sciences/refs/heads/main/conventions/signal-sciences-conventions.yml): cross-cutting request/response semantics.
+- [Error catalog](https://raw.githubusercontent.com/api-evangelist/signal-sciences/refs/heads/main/errors/signal-sciences-problem-types.yml): JSON message error envelope.
+- [Domain security](https://raw.githubusercontent.com/api-evangelist/signal-sciences/refs/heads/main/security/signal-sciences-domain-security.yml): TLS/HSTS/DNS posture.
+
+## Note
+
+Signal Sciences was acquired by Fastly; the successor product is the Fastly Next-Gen WAF. See the Fastly provider profile (all/fastly, aid fastly:ngwaf-api) for the actively maintained catalog.

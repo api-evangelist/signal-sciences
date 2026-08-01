@@ -1,0 +1,48 @@
+generated: '2026-07-21'
+method: derived
+source: >-
+  Derived from live probes of https://dashboard.signalsciences.net/api/v0 and the
+  Fastly-hosted Signal Sciences / Next-Gen WAF API reference
+  (https://www.fastly.com/documentation/reference/api/ngwaf/). No OpenAPI is
+  published in this repo, so cross-cutting semantics are captured from the docs
+  and verified request/response behavior.
+description: >-
+  How the Signal Sciences Core API (Fastly Next-Gen WAF control-plane API)
+  behaves across operations: base URL, resource hierarchy, authentication, media
+  type, and the error envelope. Cross-links authentication/ and errors/.
+
+base_url: https://dashboard.signalsciences.net/api/v0
+api_style: REST over HTTPS, JSON request and response bodies
+
+resource_hierarchy:
+  root: corp
+  nested: corp -> site -> (requests, events, rules, custom-signals, redactions,
+    lists, rate-limited-sources, thresholds, virtual-patches, alerts)
+  note: >-
+    Verified live that /api/v0/corps exists (returns 401, not 404) confirming the
+    corp-scoped resource tree.
+
+authentication:
+  scheme: token (session token from POST /auth, or a personal API access token)
+  detail: authentication/signal-sciences-authentication.yml
+  docs: https://www.fastly.com/documentation/signalsciences/using-our-api/
+
+media_type:
+  request: application/json
+  response: application/json; charset=utf-8
+
+idempotency:
+  supported: unknown
+  note: >-
+    No documented idempotency-key mechanism was found on this pass; not asserted.
+
+error_envelope:
+  shape: '{"message": "<human-readable error>"}'
+  verified: 'GET /api/v0/corps -> 401 {"message":"Unauthorized: You must be logged in to call this API"}'
+  detail: errors/signal-sciences-problem-types.yml
+
+transport_security:
+  tls: TLSv1.3
+  hsts: 'max-age=31536000; includeSubDomains'
+  x_content_type_options: nosniff
+  detail: security/signal-sciences-domain-security.yml

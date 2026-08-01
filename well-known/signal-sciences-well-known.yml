@@ -1,0 +1,26 @@
+generated: '2026-07-21'
+method: searched
+description: >-
+  Results of probing the /.well-known/ discovery surface for the Signal Sciences
+  hosts in apis.yml (Website signalsciences.com, API host
+  dashboard.signalsciences.net) plus the docs host. No host returned a real,
+  correctly-typed discovery document: signalsciences.com/docs paths redirect
+  (301) to Fastly, and dashboard.signalsciences.net answers 307 redirects for
+  every /.well-known/ path (auth gate). Nothing was saved verbatim.
+hosts:
+- host: https://signalsciences.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+- host: https://docs.signalsciences.net
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+  - path: /llms.txt
+    status: 301
+- host: https://dashboard.signalsciences.net
+  documents:
+  - path: /.well-known/security.txt
+    status: 307
+  - path: /.well-known/openid-configuration
+    status: 307

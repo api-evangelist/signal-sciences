@@ -1,0 +1,41 @@
+generated: '2026-07-21'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: www.signalsciences.com
+  https: false
+- host: www.fastly.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Aug 15 21:22:03 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: dashboard.signalsciences.net
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Aug  1 06:22:01 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+domains:
+- domain: signalsciences.com
+  dnssec: false
+  caa:
+  - 0 iodef "mailto:namecheap@signalsciences.com"
+  - 0 issuewild "awstrust.com"
+  - 0 issuewild "comodo.com"
+  - 0 issuewild "globalsign.com"
+  spf: true
+  dmarc: true
+  dmarc_policy: none
+- domain: fastly.com
+  dnssec: false
+  caa:
+  - 0 iodef "mailto:security@fastly.com"
+  - 0 issue "digicert.com"
+  - 0 issue "globalsign.com"
+  - 0 issue "amazonaws.com"
+  - 0 issue "certainly.com"
+  - 0 issue "letsencrypt.org"
+  spf: true
+  dmarc: true
+  dmarc_policy: reject
