@@ -3,6 +3,7 @@ method: searched
 checked:
 - datadog/integrations/datadog-integration-edges.yml
 - okta/integrations/okta-integration-edges.yml
+- terraform/integrations/terraform-integration-edges.yml
 source:
 - datadog/integrations/datadog-integration-edges.yml
 - okta/integrations/okta-integration-edges.yml
@@ -48,3 +49,23 @@ edges:
   - DEACTIVATE
   - SAML
   - UPDATE
+- partner_name: Terraform (terraform-registry)
+  partner: terraform
+  partner_match: mirror
+  mirror_match: register
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: terraform-registry
+  evidence: https://registry.terraform.io/providers/signalsciences/sigsci
+  mirror_of: terraform/integrations/terraform-integration-edges.yml
+  apps:
+  - signalsciences/sigsci
+  listing_count: 1
+  detected: '2026-10-21'
+  detected_by: mirror-platform-listings.py
+  category: infrastructure-as-code provider registry listing
+  badges:
+  - Verified publisher (Terraform partner tier)
+  - Verified publisher (GitHub domain-verified organization)
