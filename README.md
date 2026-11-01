@@ -64,6 +64,52 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Signal Sciences is a company surfaced as a portfolio company of crv, index-ventures and added to the API Evangelist network as a stub for enrichment. Sector: security. This profile is a lead awaiting the enrichment pipeline.
+> **Acquired or rebranded.** This company was acquired, merged or renamed. Its API, if it still exists, is offered under another name. This profile is kept as a historical record and is not maintained or rated.
 
-Backed by: crv, index-ventures — https://www.signalsciences.com/
+Signal Sciences is a web application and API protection (WAAP) company whose Next-Gen Web Application Firewall (WAF) and Runtime Application Self-Protection (RASP) defend web apps, APIs, and microservices against the OWASP Top 10, account takeover, and malicious bots without the tuning burden of legacy WAFs. Founded in 2014 by Andrew Peterson, Nick Galbreath, and Zane Lackey and backed by CRV, Index Ventures, and others, Signal Sciences was acquired by Fastly in October 2020 for approximately $775M and is now sold as the Fastly Next-Gen WAF. The product retains its own control plane and REST API at dashboard.signalsciences.net/api/v0, which remains live for existing customers and lets developers programmatically manage corps, sites, requests, events, custom signals, rules, redactions, lists, rate-limited sources, thresholds, virtual patches, and workspace alerts. Product documentation now lives on the Fastly developer documentation site.
+
+**Areas:** Company · Security · Web Application Firewall · WAF · API Security · RASP · Application Security · Bot Protection
+
+## Signal Sciences on APIs.io (historical record)
+
+Everything profiled for Signal Sciences is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/signal-sciences/](https://apis.io/providers/signal-sciences/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Signal Sciences Core API](https://apis.io/apis/signal-sciences/core-api/) — The Signal Sciences Core API (now the Fastly Next-Gen WAF control-plane API) is a REST API served at https://dashboard.signalsciences.net/api/v0 that lets…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Signal Sciences Authentication](https://apis.io/security/signal-sciences/signal-sciences-authentication/)
+- [Signal Sciences Domain Security](https://apis.io/security/signal-sciences/signal-sciences-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.signalsciences.com/)
+- [Documentation](https://www.fastly.com/documentation/signalsciences/)
+- [API reference](https://www.fastly.com/documentation/reference/api/ngwaf/)
+- [GitHub](https://github.com/signalsciences)
+
+## API Evangelist rating
+
+**Not rated** — this company is recorded as acquired or rebranded, so no score is published. If it is in fact operating, say so on this repository and it will be re-profiled.
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Signal Sciences: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/signal-sciences/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
